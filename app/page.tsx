@@ -1143,7 +1143,6 @@ export default function SuperAdmin() {
               <div className="stat-grid">
                 {[
                   { icon: '📡', label: lang === 'ku' ? 'ئامێرە ئۆنلاینەکان' : 'Online Devices', val: onlineDevices, sub: `${iotData.length} ${lang === 'ku' ? 'کۆ' : 'total'}`, color: '#dcfce7', iconBg: '#166534' },
-                  { icon: '🌡️', label: lang === 'ku' ? 'پلەی گەرمی ناوەندی' : 'Avg Temperature', val: (iotData.length && onlineDevices > 0) ? Math.round(iotData.filter(d => d.is_pack_online).reduce((s, d) => s + (d.current_temp || 0), 0) / (onlineDevices || 1)) + '°C' : (outsideTemp !== null ? outsideTemp + '°C' : '—'), sub: outsideTemp !== null ? `${lang === 'ku' ? 'دەرەوە:' : 'Outside:'} ${outsideTemp}°C` : (lang === 'ku' ? 'نرخی ئۆنلاینەکان' : 'Online devices avg'), color: '#dbeafe', iconBg: '#1e40af' },
                   { icon: '📦', label: lang === 'ku' ? 'داواکاریەکانی لە ڕێگا' : 'In Transit', val: orderStats.inTransit, sub: lang === 'ku' ? 'لە گەیاندنی چالاک' : 'Active deliveries', color: '#ede9fe', iconBg: '#6d28d9' },
                   { icon: '✅', label: lang === 'ku' ? 'گەیشتووەکان ئەمڕۆ' : 'Delivered Today', val: orderStats.delivered, sub: lang === 'ku' ? 'داواکاری تەواوبوو' : 'Completed orders', color: '#dcfce7', iconBg: '#15803d' },
                 ].map((s, i) => (
